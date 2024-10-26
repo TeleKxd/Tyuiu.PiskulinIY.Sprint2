@@ -28,6 +28,10 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task7.V3
             Console.WriteLine("Введите значение координаты Y:");
             double y = Convert.ToDouble(Console.ReadLine());
 
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");
+            Console.WriteLine("***************************************************************************");
+
             bool res = ds.CheckDotInShadedArea(x, y);
             if (res) Console.WriteLine("Точка находится в заштрихованной области");
             else Console.WriteLine("Точка не находится в заштрихованной области");
