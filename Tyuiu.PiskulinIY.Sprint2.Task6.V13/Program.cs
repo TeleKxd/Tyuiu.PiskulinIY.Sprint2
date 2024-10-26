@@ -23,13 +23,13 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task6.V13
 
             DataService ds = new DataService();
 
-            Console.WriteLine("Введите год   ");
+            Console.WriteLine("Введите год ");
             int g = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Введите месяц ");
             int m = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите день: ");
+            Console.WriteLine("Введите число ");
             int n = int.Parse(Console.ReadLine());
 
             Console.WriteLine("***************************************************************************");

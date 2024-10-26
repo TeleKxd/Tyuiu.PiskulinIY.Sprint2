@@ -5,11 +5,11 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task6.V13.Lib
     {
         public string FindDateOfNextDay(int g, int m, int n)
         {
-            int nextDay;
-            int nextMonth;
-            int nextYear = g;
+            int year = g;
+            int month = m;
+            int day = n;
 
-            switch (m)
+            switch (month)
             {
                 case 1:
                 case 3:
@@ -17,83 +17,72 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task6.V13.Lib
                 case 7:
                 case 8:
                 case 10:
-                    if (n < 31)
+                    if (day == 31)
                     {
-                        nextDay = n + 1;
-                        nextMonth = m;
+                        day = 1;
+                        month++;
                     }
                     else
                     {
-                        nextDay = 1;
-                        nextMonth = m + 1;
+                        day++;
                     }
                     break;
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    if (n < 30)
+                    if (day == 30)
                     {
-                        nextDay = n + 1;
-                        nextMonth = m;
+                        day = 1;
+                        month++;
                     }
                     else
                     {
-                        nextDay = 1;
-                        nextMonth = m + 1;
+                        day++;
                     }
                     break;
                 case 12:
-                    if (n < 31)
+                    if (day == 31)
                     {
-                        nextDay = n + 1;
-                        nextMonth = m;
+                        day = 1;
+                        month = 1;
+                        year++;
                     }
                     else
                     {
-                        nextDay = 1;
-                        nextMonth = 1;
-                        nextYear = g + 1;
+                        day++;
                     }
                     break;
                 case 2:
-                    if (IsLeapYear(g))
+                    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
                     {
-                        if (n < 29)
+                        if (day == 29)
                         {
-                            nextDay = n + 1;
-                            nextMonth = m;
+                            day = 1;
+                            month++;
                         }
                         else
                         {
-                            nextDay = 1;
-                            nextMonth = m + 1;
+                            day++;
                         }
                     }
                     else
                     {
-                        if (n < 28)
+                        if (day == 28)
                         {
-                            nextDay = n + 1;
-                            nextMonth = m;
+                            day = 1;
+                            month++;
                         }
                         else
                         {
-                            nextDay = 1;
-                            nextMonth = m + 1;
+                            day++;
                         }
                     }
                     break;
-                default:
-                    return "Некорректный номер месяца.";
+
             }
 
-            return $"Следующая дата: {nextDay}.{nextMonth}.{nextYear}";
-        }
-
-        private bool IsLeapYear(int year)
-        {
-            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+            return $"{year}-{month.ToString("00")}-{day.ToString("00")}";
         }
     }
 }
