@@ -11,7 +11,7 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task5.V11.Test
 
 
             DataService ds = new DataService();
-            Assert.AreEqual("1.1.2005", ds.FindDateOfNextDay(2004, 12, 31));
+            Assert.AreEqual("01.01.2005", ds.FindDateOfNextDay(2004, 12, 31));
 
 
         }
