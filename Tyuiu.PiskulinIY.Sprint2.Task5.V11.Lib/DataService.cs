@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint2;
+﻿using System;
+using tyuiu.cources.programming.interfaces.Sprint2;
 using static System.Net.Mime.MediaTypeNames;
 namespace Tyuiu.PiskulinIY.Sprint2.Task5.V11.Lib
 {
@@ -204,7 +205,7 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task5.V11.Lib
                     }
                     break;
             }
-            return Convert.ToString(n1) + "." + Convert.ToString(m1) + "." + Convert.ToString(g1);
+            return $"{n1.ToString("00")}.{m1.ToString("00")}.{g1}";
         }
     }
 }
