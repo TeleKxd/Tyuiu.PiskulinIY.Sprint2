@@ -82,7 +82,7 @@ namespace Tyuiu.PiskulinIY.Sprint2.Task6.V13.Lib
 
             }
 
-            return $"{year}-{month.ToString("00")}-{day.ToString("00")}";
+            return $"{day.ToString("00")}.{month.ToString("00")}.{year}";
         }
     }
 }
